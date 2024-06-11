@@ -1,4 +1,5 @@
 import argparse
+from model_classes.ashraqesc50_model import AshraqEsc50Model
 from model_classes.minilml6_model import MiniLmL6Model
 from model_classes.nllb200_model import Nllb200Model
 from model_classes.blenderbot_model import BlenderBotModel
@@ -15,6 +16,8 @@ def main(model_name: str):
         model = Nllb200Model()
     elif model_name == "minilml6":
         model = MiniLmL6Model() 
+    elif model_name == "ashraqesc50":
+        model = AshraqEsc50Model()
     else:
         raise ValueError(f"Unbekanntes Modell: {model_name}")
 
