@@ -1,2 +1,6 @@
 transformers
 torch
+datasets
+soundfile
+librosa
+IPython
