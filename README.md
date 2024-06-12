@@ -47,6 +47,11 @@ Anyone interested in quickly and easily building AI applications using open-sour
    ```bash
    pip install -r requirements.txt
    ```
+   for the use of the models gardiospeech_model.py and librispeech_model.py you need to install ffmpeg from https://ffmpeg.org
+   download the windows installer from the web or on mac os x do:
+   ```bash
+   brew install ffmpeg
+   ```
 4. Explore the app to understand and run the experiments.
 
 ## Contributions
