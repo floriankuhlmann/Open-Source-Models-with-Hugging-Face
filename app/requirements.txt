@@ -4,3 +4,7 @@ datasets
 soundfile
 librosa
 IPython
+sounddevice 
+numpy
+librosa
+gradio
