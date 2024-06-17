@@ -1,10 +1,12 @@
 import argparse
-from model_classes.gradiospeech_model import GradioSpeechModel
-from model_classes.librispeech_model import LibrispeechModel
-from model_classes.ashraqesc50_model import AshraqEsc50Model
-from model_classes.minilml6_model import MiniLmL6Model
-from model_classes.nllb200_model import Nllb200Model
-from model_classes.blenderbot_model import BlenderBotModel
+from model_classes.object_detection_model import ObjectDetectionModel
+from model_classes.automatic_speech_recognition_2_model import AutomaticSpeechRecognition2Model
+from model_classes.automatic_speech_recognition_1_model import AutomaticSpeechRecognition1Model
+from model_classes.zero_shot_audio_classification_model import ZeroShotAudioClassificationModel
+from model_classes.sentence_embeddings_model import SentenceEmbeddingsModel
+from model_classes.translation_and_summarization_model import TranslationandSummarizationModel
+from model_classes.natural_language_processing_model import NaturalLanguageProcessingModel
+from model_classes.text_to_speech_model import TextToSpeechModel
 from transformers.utils import logging
 
 def main(model_name: str):
@@ -12,24 +14,22 @@ def main(model_name: str):
     logging.set_verbosity_error()
 
     # Wählen Sie das Modell basierend auf dem Parameter
-    if model_name == "blenderbot":
-        model = BlenderBotModel()
-    elif model_name == "nllb200":
-        model = Nllb200Model()
-    elif model_name == "minilml6":
-        model = MiniLmL6Model() 
-    elif model_name == "ashraqesc50":
-        model = AshraqEsc50Model()
-    elif model_name == "librispeech":
-        ## course chapter
-        # https://learn.deeplearning.ai/courses/open-source-models-hugging-face/lesson/7/automatic-speech-recognition
-        # first part of the course chapter
-        model = LibrispeechModel()
-    elif model_name == "gradiospeech":
-        ## course chapter
-        # https://learn.deeplearning.ai/courses/open-source-models-hugging-face/lesson/7/automatic-speech-recognition
-        # second part of the course chapter
-        model = GradioSpeechModel()
+    if model_name == "natural-language-processing":
+        model = NaturalLanguageProcessingModel()
+    elif model_name == "translation-and-summarization":
+        model = TranslationandSummarizationModel()
+    elif model_name == "sentence-embeddings":
+        model = SentenceEmbeddingsModel() 
+    elif model_name == "zero-shot-audio-classification":
+        model = ZeroShotAudioClassificationModel()
+    elif model_name == "automatic-speech-recognition-1":
+        model = AutomaticSpeechRecognition1Model()
+    elif model_name == "automatic-speech-recognition-2":
+        model = AutomaticSpeechRecognition2Model()
+    elif model_name == "text-to-speech":
+        model = TextToSpeechModel()
+    elif model_name == "object-detection":
+        model = ObjectDetectionModel()
     else:
         raise ValueError(f"Unbekanntes Modell: {model_name}")
 
