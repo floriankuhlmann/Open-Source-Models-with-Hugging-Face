@@ -8,3 +8,11 @@ sounddevice
 numpy
 librosa
 gradio
+timm
+inflect
+phonemizer
+setuptools
+matplotlib
+requests
+inflect
+Pillow
