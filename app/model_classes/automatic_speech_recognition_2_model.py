@@ -10,8 +10,9 @@ import os
 
 ## course chapter
 # https://learn.deeplearning.ai/courses/open-source-models-hugging-face/lesson/7/automatic-speech-recognition
+# second part of the course chapter
 
-class GradioSpeechModel(BaseModel):
+class AutomaticSpeechRecognition2Model(BaseModel):
     def __init__(self):
         load_dotenv()
         port = os.environ.get('PORT1')

@@ -7,7 +7,11 @@ from transformers import pipeline
 import sounddevice as sd
 import numpy as np
 
-class LibrispeechModel(BaseModel):
+## course chapter
+# https://learn.deeplearning.ai/courses/open-source-models-hugging-face/lesson/7/automatic-speech-recognition
+# first part of the course chapter
+
+class AutomaticSpeechRecognition1Model(BaseModel):
     def __init__(self):
 
         self.generate_response("Data preparation")

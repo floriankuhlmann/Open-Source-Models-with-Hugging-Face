@@ -2,7 +2,7 @@
 from transformers import pipeline, Conversation, AutoTokenizer, BlenderbotForConditionalGeneration
 from model_classes.base_model import BaseModel
 
-class BlenderBotModel(BaseModel):
+class NaturalLanguageProcessingModel(BaseModel):
     def __init__(self):
 
         model_path = "./models/facebook/blenderbot-400M-distill"

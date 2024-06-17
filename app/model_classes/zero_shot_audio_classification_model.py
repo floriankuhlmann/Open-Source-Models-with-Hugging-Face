@@ -7,7 +7,10 @@ from transformers import pipeline
 import sounddevice as sd
 import numpy as np
 
-class AshraqEsc50Model(BaseModel):
+# Lecture 6 Zero-Shot Audio Classification
+# https://learn.deeplearning.ai/courses/open-source-models-hugging-face/lesson/6/zero-shot-audio-classification
+
+class ZeroShotAudioClassificationModel(BaseModel):
     def __init__(self):
 
         # This dataset is a collection of different sounds of 5 seconds
@@ -18,7 +21,7 @@ class AshraqEsc50Model(BaseModel):
         self.generate_response("audio samlpe:")
         self.generate_response(audio_sample)
 
-
+        # in the origonal lecture the audio was played with IPythonAudio
         # IPythonAudio(audio_sample["audio"]["array"],
         #      rate=audio_sample["audio"]["sampling_rate"])
         
@@ -46,11 +49,10 @@ class AshraqEsc50Model(BaseModel):
                     "Sound of an airplane"]
         self.generate_response(zero_shot_classifier(audio_sample["audio"]["array"],
                      candidate_labels=candidate_labels))
-        # Fügen Sie eine weitere Nachricht zur Konversation hinzu
 
     def generate_response(self, msg: str):
         print(msg)
 
     def play_audio(self, audio_array, sampling_rate):
         sd.play(audio_array, sampling_rate)
-        sd.wait()  # Warten, bis die Wiedergabe abgeschlossen ist
+        sd.wait()   # Wait until the audio has finished playing

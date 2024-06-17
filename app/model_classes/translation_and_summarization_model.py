@@ -3,7 +3,7 @@ from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
 from model_classes.base_model import BaseModel
 import gc
 
-class Nllb200Model(BaseModel):
+class TranslationandSummarizationModel(BaseModel):
     def __init__(self):
         
         model_path = "./models/facebook/nllb-200-distilled-600M"

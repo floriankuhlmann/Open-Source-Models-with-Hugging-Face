@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer
 from model_classes.base_model import BaseModel
 from sentence_transformers import util
 
-class MiniLmL6Model(BaseModel):
+class SentenceEmbeddingsModel(BaseModel):
     def __init__(self):
         # model = SentenceTransformer("all-MiniLM-L6-v2")
         model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
